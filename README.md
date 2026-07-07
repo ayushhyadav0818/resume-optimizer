@@ -58,7 +58,6 @@ Make sure you have **Node.js** installed on your system.
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
-
 ## 💡 How it works with Gemini API
 
 1. Go to the header and click **Configure API Key**.
