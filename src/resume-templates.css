@@ -1,0 +1,153 @@
+/* Resume Template & Print Styles (ATS Optimized) */
+
+.resume-paper {
+  background: white;
+  color: #111827;
+  padding: 2.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 10.5pt;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-md);
+  max-width: 8.5in;
+  margin: 0 auto;
+  min-height: 11in;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Base structural layout - single column is best for ATS */
+.resume-paper h1, 
+.resume-paper h2, 
+.resume-paper h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111827;
+  font-weight: bold;
+}
+
+.resume-header-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.resume-name {
+  font-size: 20pt;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+
+.resume-contact-info {
+  font-size: 9.5pt;
+  color: #4b5563;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.resume-contact-info span:not(:last-child)::after {
+  content: " |";
+  color: #9ca3af;
+}
+
+.resume-section {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.resume-section-title {
+  font-size: 11pt;
+  text-transform: uppercase;
+  border-bottom: 1px solid #111827;
+  padding-bottom: 2px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.resume-item {
+  margin-bottom: 0.75rem;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+.resume-item-subheader {
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+  font-size: 9.5pt;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.resume-bullets {
+  margin-left: 1.25rem;
+  padding-left: 0;
+  list-style-type: square;
+}
+
+.resume-bullets li {
+  margin-bottom: 0.2rem;
+  font-size: 9.5pt;
+  color: #1f2937;
+}
+
+.resume-skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resume-skills-item {
+  font-size: 9.5pt;
+}
+
+.resume-skills-category {
+  font-weight: bold;
+}
+
+/* Print Specific Rules - triggers when user prints or saves to PDF */
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide everything except the resume itself */
+  .app-header,
+  .nav-tabs,
+  .btn,
+  .key-banner,
+  .wizard-nav,
+  .optimizer-controls,
+  .workspace-sidebar,
+  .no-print {
+    display: none !important;
+  }
+
+  .main-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .resume-paper {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+  
+  /* Avoid page breaks inside experience blocks */
+  .resume-item {
+    page-break-inside: avoid;
+  }
+}
